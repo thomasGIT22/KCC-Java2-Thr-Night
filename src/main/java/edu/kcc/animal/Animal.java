@@ -31,7 +31,15 @@ public abstract class Animal{
 
     // TODO: Need getName method - Daniel
     
-    // TODO: Need setName method - Cash
+    /**
+     * An setter method to set the name of an Animal.
+     * 
+     * @author Cash Carlson
+     * @param name The name of an animal
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
     
     // TODO: Need getSpecies method - Sheryl
     
