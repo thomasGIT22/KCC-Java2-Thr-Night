@@ -48,7 +48,9 @@ public abstract class Animal{
     // TODO: Need getLegs method - Mitchell
     
     // TODO: Need setLegs method - Ramiro
-    
+    public void setLegs(int legs){
+        this.legs = legs;
+    }
     // TODO: Need getWeight method - Calvin
     
     // TODO: Need setWeight method - Richard
