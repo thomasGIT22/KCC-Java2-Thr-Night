@@ -54,7 +54,9 @@ public abstract class Animal{
     // TODO: Need setWeight method - Richard
     
     // TODO: Need getDateAdded method - Thomas
-    
+    public LocalDate getDateAdded(){
+        return dateAdded;
+    }
     // TODO: Need setDateAdded method - Nathaniel
     
     // TODO: Need getLastFeedingTime method - Christopher
@@ -64,4 +66,5 @@ public abstract class Animal{
     // TODO: Need toString method
     
     // TODO: Need compareTo method
+    
 }
