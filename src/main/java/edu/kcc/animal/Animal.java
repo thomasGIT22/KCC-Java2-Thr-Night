@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
  * @author k0519415
  */
 public abstract class Animal{
-   
+
     private String name;
     private String species;
     private String gender;
@@ -50,6 +50,13 @@ public abstract class Animal{
     // TODO: Need setLegs method - Ramiro
     
     // TODO: Need getWeight method - Calvin
+    /**
+     * @return the weight
+     */
+    public BigDecimal getWeight() {
+        return weight;
+    }
+   
     
     // TODO: Need setWeight method - Richard
     
