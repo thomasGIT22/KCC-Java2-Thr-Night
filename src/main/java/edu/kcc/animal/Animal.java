@@ -55,7 +55,13 @@ public abstract class Animal{
     
     // TODO: Need getDateAdded method - Thomas
     
-    // TODO: Need setDateAdded method - Nathaniel
+    /**
+     * Need setDateAdded method - Nathaniel
+     * @param dateAdded the dateAdded to set
+     */
+    public void setDateAdded(LocalDate dateAdded) {
+        this.dateAdded = dateAdded;
+    }
     
     // TODO: Need getLastFeedingTime method - Christopher
     
@@ -64,4 +70,6 @@ public abstract class Animal{
     // TODO: Need toString method
     
     // TODO: Need compareTo method
+
+    
 }
