@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
  * @author k0519415
  */
 public abstract class Animal{
-   
+
     private String name;
     private String species;
     private String gender;
@@ -31,14 +31,27 @@ public abstract class Animal{
 
     // TODO: Need getName method - Daniel
     
-    // TODO: Need setName method - Cash
+    /**
+     * An setter method to set the name of an Animal.
+     * 
+     * @author Cash Carlson
+     * @param name The name of an animal
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
     
     // TODO: Need getSpecies method - Sheryl
+    public String getSpecies() {
+        return species;
+    }
     
     // TODO: Need getGender method - Nate
     
     // TODO: Need getAge method - Jakub
-    
+    public int getAge(){
+        return age;
+    }
     // TODO: Need setAge method - Musab
     
     // TODO: Need getFixed method - Jamesser
@@ -48,8 +61,17 @@ public abstract class Animal{
     // TODO: Need getLegs method - Mitchell
     
     // TODO: Need setLegs method - Ramiro
-    
+    public void setLegs(int legs){
+        this.legs = legs;
+    }
     // TODO: Need getWeight method - Calvin
+    /**
+     * @return the weight
+     */
+    public BigDecimal getWeight() {
+        return weight;
+    }
+   
     
     // TODO: Need setWeight method - Richard
     
@@ -66,10 +88,12 @@ public abstract class Animal{
     // TODO: Need getLastFeedingTime method - Christopher
     
     // TODO: Need setLastFeedingTime method
+    public void setLastFeedingTime(LocalDateTime ldt) {
+        lastFeedingTime = ldt;
+    }
     
     // TODO: Need toString method
     
     // TODO: Need compareTo method
 
-    
 }
