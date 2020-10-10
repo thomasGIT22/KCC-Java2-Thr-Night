@@ -79,6 +79,9 @@ public abstract class Animal{
     }
     
     // TODO: Need getDateAdded method - Thomas
+    public LocalDate getDateAdded(){
+        return dateAdded;
+    }
     
     /**
      * Need setDateAdded method - Nathaniel
