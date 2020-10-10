@@ -74,6 +74,9 @@ public abstract class Animal{
    
     
     // TODO: Need setWeight method - Richard
+    public void setWeight(BigDecimal animalWeight){
+        weight = animalWeight;
+    }
     
     // TODO: Need getDateAdded method - Thomas
     
