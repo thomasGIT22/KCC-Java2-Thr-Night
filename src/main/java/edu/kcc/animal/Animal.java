@@ -42,7 +42,9 @@ public abstract class Animal{
     }
     
     // TODO: Need getSpecies method - Sheryl
-    
+    public String getSpecies() {
+        return species;
+    }
     
     // TODO: Need getGender method - Nate
     
@@ -75,7 +77,13 @@ public abstract class Animal{
     
     // TODO: Need getDateAdded method - Thomas
     
-    // TODO: Need setDateAdded method - Nathaniel
+    /**
+     * Need setDateAdded method - Nathaniel
+     * @param dateAdded the dateAdded to set
+     */
+    public void setDateAdded(LocalDate dateAdded) {
+        this.dateAdded = dateAdded;
+    }
     
     // TODO: Need getLastFeedingTime method - Christopher
     
@@ -88,7 +96,4 @@ public abstract class Animal{
     
     // TODO: Need compareTo method
 
-    public String getSpecies() {
-        return species;
-    }
 }
