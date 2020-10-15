@@ -94,7 +94,11 @@ public class Animal{
     
     // TODO: Need fixedValidator method (Thomas)
         // don't allow an animal that is already fixed to be fixed again
-    
+    public void fixedValidator(){
+        if(fixed == true){
+            System.out.println("Animal has already been fixed.");
+        }
+    }
     
     // TODO: Need getLegs method (Nathaniel)
     
