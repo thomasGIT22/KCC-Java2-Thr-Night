@@ -66,7 +66,9 @@ public class Animal{
     }
     
     // TODO: Need setSpecies method (Jakub)
-    
+    public void setSpecies(String species){
+        this.species = species;
+    }
     // TODO: Need speciesValidator method (Musab)
         // Only allow cat and dog. Only allow it to change if it's "Unknown".
     
