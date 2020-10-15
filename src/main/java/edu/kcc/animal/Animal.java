@@ -8,13 +8,17 @@ package edu.kcc.animal;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author k0519415
  */
-public abstract class Animal{
+public class Animal{
 
+    private String id;
+    private static List<String> idList = new ArrayList<>();
     private String name;
     private String species;
     private String gender;
@@ -25,87 +29,117 @@ public abstract class Animal{
     private LocalDate dateAdded;
     private LocalDateTime lastFeedingTime;
 
-    // TODO: Need full constructor
+    // TODO: Need full constructor (Cash)
     
-    // TODO: Need default constructor
+    public Animal() {
+        id = "0";
+        idList.add(id);
+        name = "Unknown";
+        species = "Unknown";
+        gender = "Unknown";
+        age = 0;
+        fixed = false;
+        legs = 4;
+        weight = BigDecimal.valueOf(0);
+        dateAdded = LocalDate.of(2020, 9, 1); // September 1, 2020
+        lastFeedingTime = LocalDateTime.of(2020, 10, 1, 23, 59); // October 1, 2020 at 11:59pm
+    }
+    
+    // TODO: Need getId method (Daniel)
+    
+    // TODO: Need setId method (Sheryl)
+    
+    // TODO: Need idValidator method (Nate)
+        // Only allow it to change if it's "0". 
+        // Do not allow an id to be set if the id is already in the idList
 
-    // TODO: Need getName method - Daniel
+    public String getName() {
+        return name;
+    }
     
-    /**
-     * An setter method to set the name of an Animal.
-     * 
-     * @author Cash Carlson
-     * @param name The name of an animal
-     */
     public void setName(String name) {
         this.name = name;
     }
     
-    // TODO: Need getSpecies method - Sheryl
     public String getSpecies() {
         return species;
     }
     
-    // TODO: Need getGender method - Nate
+    // TODO: Need setSpecies method (Jakub)
+    
+    // TODO: Need speciesValidator method (Musab)
+        // Only allow cat and dog. Only allow it to change if it's "Unknown".
+    
     public String getGender() {
         return gender;
     }
     
-    // TODO: Need getAge method - Jakub
+    // TODO: Need setGender method (Jamesser)
+    
+    // TODO: Need genderValidator method (Asaad)
+        // Only allow male and female. Only allow it to change if it's "Unknown".
+    
     public int getAge(){
         return age;
     }
-    // TODO: Need setAge method - Musab
+    // TODO: Need setAge method (Mitchell)
     
-    // TODO: Need getFixed method - Jamesser
+    // TODO: Need ageValidator method - only allow ages 0 to 100 (Calvin)
     
-    // TODO: Need setFixed method - Asaaad
+    // TODO: Need getFixed method (Richard)
+    
     public void setFixed (boolean fix){
         fixed = fix;
     }
     
-    // TODO: Need getLegs method - Mitchell
+    // TODO: Need fixedValidator method (Thomas)
+        // don't allow an animal that is already fixed to be fixed again
     
-    // TODO: Need setLegs method - Ramiro
+    
+    // TODO: Need getLegs method (Nathaniel)
+    
     public void setLegs(int legs){
         this.legs = legs;
     }
-    // TODO: Need getWeight method - Calvin
-    /**
-     * @return the weight
-     */
+    
+    // TODO: Need legsValidator method - only allow legs 0 to 4(Christopher)
+    
     public BigDecimal getWeight() {
         return weight;
     }
    
-    
-    // TODO: Need setWeight method - Richard
     public void setWeight(BigDecimal animalWeight){
         weight = animalWeight;
     }
     
-    // TODO: Need getDateAdded method - Thomas
+    // TODO: Need weightValidator method - only allow weight 0.0 to 1000.0 (Daniel)
+    
+    
     public LocalDate getDateAdded(){
         return dateAdded;
     }
-    
-    /**
-     * Need setDateAdded method - Nathaniel
-     * @param dateAdded the dateAdded to set
-     */
+
     public void setDateAdded(LocalDate dateAdded) {
         this.dateAdded = dateAdded;
     }
     
-    // TODO: Need getLastFeedingTime method - Christopher
+    // TODO: Need dateValidator method (Cash)
+        // only allow dates up to a week in the past
     
-    // TODO: Need setLastFeedingTime method
+    
+    // TODO: Need getLastFeedingTime method (Sheryl)
+    
     public void setLastFeedingTime(LocalDateTime ldt) {
         lastFeedingTime = ldt;
     }
     
-    // TODO: Need toString method
+    // TODO: Need feedingValidator method (Nate)
+        // only allow day/times up to two days in the past
     
-    // TODO: Need compareTo method
+    // TODO: Need toString method (Jakub)
+        //include name, species, gender, age, and weight 
+    
+    // TODO: Need compareTo method //Musab
+        // Compare by their species first, then by their name 
 
 }
