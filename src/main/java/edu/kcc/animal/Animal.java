@@ -50,6 +50,19 @@ public class Animal{
     // TODO: Need setId method (Sheryl)
     
     // TODO: Need idValidator method (Nate)
+    public void idValidator(String id){
+        
+        for (int i = 0; i < idList.size(); i++) {
+            if (id == idList.get(i)){
+                throw new IllegalArgumentException("The id enterd is not a valid id. "
+                        + "make sure the id is not allready in the id list.");
+            }
+            if(id != "0"){
+                throw new IllegalArgumentException("The id can only "
+                        + "change if it's \"0\"." );
+            }
+        }
+    }
         // Only allow it to change if it's "0". 
         // Do not allow an id to be set if the id is already in the idList
 
