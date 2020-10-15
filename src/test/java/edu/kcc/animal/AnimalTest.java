@@ -48,8 +48,13 @@ public class AnimalTest {
     
     // TODO - Need testGeLegs method (Jory)
     
-    // TODO - Need testGetWeight method (Chantal)
-    
+    // TODO - Need testGetWeight method (Nathaniel)
+    public void testGetWeight() {
+        setUp();
+        BigDecimal expected = new BigDecimal(10.12345);
+        BigDecimal actual = animal.getWeight();
+        assertEquals(expected, actual);
+    }
     // TODO - Need testGetDateAdded method
     
     // TODO - Need testGetLastFeedingTime method
