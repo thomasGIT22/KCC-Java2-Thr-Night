@@ -134,17 +134,19 @@ public class Animal{
     
     // TODO: Need getLastFeedingTime method (Sheryl)
     
+    
+    public LocalDateTime getLastFeedingTime() {
+        return lastFeedingTime;
+    }
+    
     public void setLastFeedingTime(LocalDateTime ldt) {
         lastFeedingTime = ldt;
     }
-    
     // TODO: Need feedingValidator method (Nate)
-        // only allow day/times up to two days in the past
-    
+    // only allow day/times up to two days in the past
     // TODO: Need toString method (Jakub)
-        //include name, species, gender, age, and weight 
-    
+    //include name, species, gender, age, and weight
     // TODO: Need compareTo method //Musab
-        // Compare by their species first, then by their name 
+    // Compare by their species first, then by their name 
 
 }
