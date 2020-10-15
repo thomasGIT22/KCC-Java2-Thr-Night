@@ -85,6 +85,11 @@ public class Animal{
     // TODO: Need setAge method (Mitchell)
     
     // TODO: Need ageValidator method - only allow ages 0 to 100 (Calvin)
+    public void validateAge(int age){
+        if(age < 0 || age > 100){
+            throw new IllegalArgumentException("Age must be between 0 and 100");
+        }
+    }
     
     // TODO: Need getFixed method (Richard)
     
@@ -141,5 +146,9 @@ public class Animal{
     
     // TODO: Need compareTo method //Musab
         // Compare by their species first, then by their name 
+
+    boolean getFixed() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }
