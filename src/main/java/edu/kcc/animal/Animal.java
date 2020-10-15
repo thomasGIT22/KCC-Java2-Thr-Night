@@ -143,6 +143,13 @@ public class Animal{
     public String toString(){
         return name + " the " + gender + " " + species + " is " + age
                 + " and has a weight of " + weight.toString();
+        /*
+        return "Name: " + name + "\n" +
+                "Gender: " + gender + "\n" +
+                "Species: " + species + "\n" +
+                "Age: " + age + "\n" +
+                "Weight: " + weight;
+        */
     }
         //include name, species, gender, age, and weight 
     
