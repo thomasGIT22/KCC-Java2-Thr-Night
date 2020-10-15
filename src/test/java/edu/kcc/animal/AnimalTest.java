@@ -40,7 +40,11 @@ public class AnimalTest {
     
     // TODO - Need testGetName method (Chase)
     
-    // TODO - Need testGetAge method (Fadwa)
+    // TODO - Need testGetAge method (Ramiro)
+        setUp();
+        int expResult = 10;
+        int result = animal.getAge();
+        assertEquals(expResult, result);
     
     // TODO - Need testGetFixed method (Ryan)
     
@@ -52,6 +56,9 @@ public class AnimalTest {
     
     // TODO - Need testGetDateAdded method
     
-    // TODO - Need testGetLastFeedingTime method
-    
+    // TODO - Need testGetLastFeedingTime method (Ramiro)
+        setUp();
+        int expResult = LocalDate.now().minusDays(1);
+        int result = animal.getLastFeedingTime();
+        assertEquals(expResult, result);
 }
