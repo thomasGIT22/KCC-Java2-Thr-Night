@@ -97,6 +97,9 @@ public class Animal{
     
     
     // TODO: Need getLegs method (Nathaniel)
+    public int getLegs() {
+        return legs;
+    }
     
     public void setLegs(int legs){
         this.legs = legs;
