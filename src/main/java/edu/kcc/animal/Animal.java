@@ -48,6 +48,11 @@ public class Animal{
     // TODO: Need getId method (Daniel)
     
     // TODO: Need setId method (Sheryl)
+
+    public void setId(String id) {
+        this.id = id;
+    }
+    
     
     // TODO: Need idValidator method (Nate)
         // Only allow it to change if it's "0". 
@@ -87,6 +92,11 @@ public class Animal{
     // TODO: Need setAge method (Mitchell)
     
     // TODO: Need ageValidator method - only allow ages 0 to 100 (Calvin)
+    public void validateAge(int age){
+        if(age < 0 || age > 100){
+            throw new IllegalArgumentException("Age must be between 0 and 100");
+        }
+    }
     
     // TODO: Need getFixed method (Richard)
     
@@ -99,6 +109,9 @@ public class Animal{
     
     
     // TODO: Need getLegs method (Nathaniel)
+    public int getLegs() {
+        return legs;
+    }
     
     public void setLegs(int legs){
         this.legs = legs;
@@ -131,14 +144,18 @@ public class Animal{
     
     // TODO: Need getLastFeedingTime method (Sheryl)
     
+    
+    public LocalDateTime getLastFeedingTime() {
+        return lastFeedingTime;
+    }
+    
     public void setLastFeedingTime(LocalDateTime ldt) {
         lastFeedingTime = ldt;
     }
-    
     // TODO: Need feedingValidator method (Nate)
-        // only allow day/times up to two days in the past
-    
+    // only allow day/times up to two days in the past
     // TODO: Need toString method (Jakub)
+
     @Override
     public String toString(){
         return name + " the " + gender + " " + species + " is " + age
@@ -152,8 +169,12 @@ public class Animal{
         */
     }
         //include name, species, gender, age, and weight 
-    
+
     // TODO: Need compareTo method //Musab
-        // Compare by their species first, then by their name 
+    // Compare by their species first, then by their name 
+
+    boolean getFixed() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }
