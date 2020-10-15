@@ -30,6 +30,20 @@ public class Animal{
     private LocalDateTime lastFeedingTime;
 
     // TODO: Need full constructor (Cash)
+    public Animal(String id, String name, String species, 
+            String gender, int age, boolean fixed, int legs, BigDecimal weight,
+            LocalDate dateAdded, LocalDateTime lastFeedingTime) {
+        setId(id);
+        idList.add(id);
+        setSpecies(species);
+        setGender(gender);
+        setAge(age);
+        setFixed(Fixed);
+        setLegs(legs);
+        setWeight(weight);
+        setDateAdded(dateAdded);
+        setLastFeedingTime(lastFeedingTime);
+    }
     
     public Animal() {
         id = "0";
