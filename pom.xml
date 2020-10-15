@@ -9,19 +9,31 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
+<<<<<<< HEAD
             <version>5.6.0</version>
+=======
+            <version>5.3.1</version>
+>>>>>>> e7da9504d2335b974ffa9a546128b0b2cc2fec64
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
+<<<<<<< HEAD
             <version>5.6.0</version>
+=======
+            <version>5.3.1</version>
+>>>>>>> e7da9504d2335b974ffa9a546128b0b2cc2fec64
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
+<<<<<<< HEAD
             <version>5.6.0</version>
+=======
+            <version>5.3.1</version>
+>>>>>>> e7da9504d2335b974ffa9a546128b0b2cc2fec64
             <scope>test</scope>
         </dependency>
         <dependency>
