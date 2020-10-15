@@ -48,6 +48,11 @@ public class Animal{
     // TODO: Need getId method (Daniel)
     
     // TODO: Need setId method (Sheryl)
+
+    public void setId(String id) {
+        this.id = id;
+    }
+    
     
     // TODO: Need idValidator method (Nate)
         // Only allow it to change if it's "0". 
