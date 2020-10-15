@@ -139,6 +139,11 @@ public class Animal{
         // only allow day/times up to two days in the past
     
     // TODO: Need toString method (Jakub)
+    @Override
+    public String toString(){
+        return name + " the " + gender + " " + species + " is " + age
+                + " and has a weight of " + weight.toString();
+    }
         //include name, species, gender, age, and weight 
     
     // TODO: Need compareTo method //Musab
