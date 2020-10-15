@@ -58,7 +58,7 @@ public class AnimalTest {
     
     // TODO - Need testGetLastFeedingTime method (Ramiro)
         setUp();
-        int expResult = LocalDate.now().minusDays(1);
-        int result = animal.getLastFeedingTime();
+        LocalDate expResult = LocalDate.now().minusDays(1);
+        LocalDate result = animal.getLastFeedingTime();
         assertEquals(expResult, result);
 }
