@@ -29,7 +29,20 @@ public class Animal{
     private LocalDate dateAdded;
     private LocalDateTime lastFeedingTime;
 
-    // TODO: Need full constructor (Cash)
+    public Animal(String id, String name, String species, 
+            String gender, int age, boolean fixed, int legs, BigDecimal weight,
+            LocalDate dateAdded, LocalDateTime lastFeedingTime) {
+        setId(id);
+        idList.add(id);
+        setSpecies(species);
+        setGender(gender);
+        setAge(age);
+        setFixed(Fixed);
+        setLegs(legs);
+        setWeight(weight);
+        setDateAdded(dateAdded);
+        setLastFeedingTime(lastFeedingTime);
+    }
     
     public Animal() {
         id = "0";
@@ -138,8 +151,12 @@ public class Animal{
         this.dateAdded = dateAdded;
     }
     
-    // TODO: Need dateValidator method (Cash)
-        // only allow dates up to a week in the past
+    public void dateValidator(LocalDate date) {
+        //Check if date is more than a week in the past
+        if(date.isBefore(LocalDate.now().minusWeeks(1))){
+            throw new IllegalArgumentException();
+        }
+    }
     
     
     // TODO: Need getLastFeedingTime method (Sheryl)
