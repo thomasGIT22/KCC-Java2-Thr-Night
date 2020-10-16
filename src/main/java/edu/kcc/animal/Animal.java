@@ -68,6 +68,19 @@ public class Animal{
     
     
     // TODO: Need idValidator method (Nate)
+    public void idValidator(String id){
+        
+        for (int i = 0; i < idList.size(); i++) {
+            if (id == idList.get(i)){
+                throw new IllegalArgumentException("The id enterd is not a valid id. "
+                        + "make sure the id is not allready in the id list.");
+            }
+            if(id != "0"){
+                throw new IllegalArgumentException("The id can only "
+                        + "change if it's \"0\"." );
+            }
+        }
+    }
         // Only allow it to change if it's "0". 
         // Do not allow an id to be set if the id is already in the idList
 
@@ -170,7 +183,14 @@ public class Animal{
         lastFeedingTime = ldt;
     }
     // TODO: Need feedingValidator method (Nate)
-    // only allow day/times up to two days in the past
+        // only allow day/times up to two days in the past
+    public void feedingValidator(LocalDateTime lastFeedingTime){
+        if (LocalDateTime.now().minusDays(2).isBefore(lastFeedingTime)) {
+            throw new IllegalArgumentException("Last feeding times"
+                    + "no less than two days in the past");
+        }
+    }    
+    
     // TODO: Need toString method (Jakub)
 
     @Override
