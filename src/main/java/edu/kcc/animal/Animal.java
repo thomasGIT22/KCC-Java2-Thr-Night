@@ -147,7 +147,12 @@ public class Animal{
     }
     
     // TODO: Need feedingValidator method (Nate)
-        // only allow day/times up to two days in the past
+    public void feedingValidator(LocalDateTime lastFeedingTime){
+        if (LocalDateTime.now().minusDays(2).isBefore(lastFeedingTime)) {
+            throw new IllegalArgumentException("Last feeding times"
+                    + "no less than two days in the past");
+        }
+    }    // only allow day/times up to two days in the past
     
     // TODO: Need toString method (Jakub)
         //include name, species, gender, age, and weight 
