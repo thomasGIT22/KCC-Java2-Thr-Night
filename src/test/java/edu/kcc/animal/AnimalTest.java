@@ -6,45 +6,65 @@
 package edu.kcc.animal;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.BeforeEach;
-
+import org.junit.Before;
 /**
  *
- * @author Asaad Moah
+ * @author marchauschildt
  */
 public class AnimalTest {
-     private static final String N = "N";
-     private static final String S = "S";
-     private static final String GENDER = "M";
-     private static final int A = 9;
-     private static final boolean T = true;
-     private static final int L = 8;
-    private static final BigDecimal B = new BigDecimal("4.00");
-     private static final LocalDateTime D = LocalDateTime.now();
-     private static final LocalDateTime TM = LocalDateTime.now();
-     
-     private Animal instance;
-    
-    public AnimalTest() {
-    }
 
-    @Test
-    public void testSomeMethod() {
-    }
-    @BeforeEach
+    private Animal animal;
+    
+    @Before
     public void setUp() {
-        instance  = new  Animal(N,S,GENDER,A,T,L,B,D,TM);
-       
+        animal = new Animal();
     }
-    @Test
-    public void getGender() {
+    
+    // TODO - Need testGetId method
+    
+    @org.junit.Test
+    public void testGetName() {
         setUp();
-        String expResult = "M";
-        String result = instance.getGender();
+        String expected = "Unknown";
+        String actual = animal.getName();
+        assertEquals(expected, actual);
+    }
+    
+    // TODO - Need testGetSpecies method (Becky)
+    
+    // TODO - Need testGetGender method (Whitney)
+    
+    // TODO - Need testGetName method (Chase)
+    
+    // TODO - Need testGetAge method (Fadwa)
+    
+    // TODO - Need testGetFixed method (Calvin)
+    @org.junit.jupiter.api.Test
+    public void testGetFixed() {
+        setUp();
+        boolean expResult = false;
+        boolean result = instance.getFixed();
         assertEquals(expResult, result);
     }
+    
+    // TODO - Need testGetId method (Joseph)
+    
+    // TODO - Need testGeLegs method (Jory)
+    
+    // TODO - Need testGetWeight method (Nathaniel)
+    @org.junit.Test
+    public void testGetWeight() {
+        setUp();
+        BigDecimal expected = new BigDecimal(0);
+        BigDecimal actual = animal.getWeight();
+        assertEquals(expected, actual);
+    }
+    // TODO - Need testGetDateAdded method
+    
+    // TODO - Need testGetLastFeedingTime method
     
 }
