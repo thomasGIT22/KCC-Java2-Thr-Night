@@ -87,10 +87,18 @@ public class Animal{
     public String getName() {
         return name;
     }
-    
+  
     public void setName(String name) {
         this.name = name;
     }
+    
+    // TODO: Need getGender method - Nate
+    public  String getGender(){
+        return gender;
+    }
+    
+    public void setGender(String g){
+        gender = g;
     
     public String getSpecies() {
         return species;

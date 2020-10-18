@@ -43,13 +43,9 @@ public class AnimalTest {
     // TODO - Need testGetAge method (Fadwa)
     
     // TODO - Need testGetFixed method (Calvin)
-    /**
-     * Test of getFixed method, of class Animal.
-     */
     @org.junit.jupiter.api.Test
     public void testGetFixed() {
-        System.out.println("getFixed");
-        Animal instance = animal;
+        setUp();
         boolean expResult = false;
         boolean result = instance.getFixed();
         assertEquals(expResult, result);
