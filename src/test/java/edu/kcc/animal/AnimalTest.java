@@ -10,7 +10,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.Before;
 /**
  *
  * @author marchauschildt
@@ -19,14 +18,12 @@ public class AnimalTest {
 
     private Animal animal;
     
-    @Before
     public void setUp() {
         animal = new Animal();
     }
     
     // TODO - Need testGetId method
-    
-    @org.junit.Test
+   
     public void testGetName() {
         setUp();
         String expected = "Unknown";
@@ -43,7 +40,7 @@ public class AnimalTest {
     // TODO - Need testGetAge method (Ramiro)
     public void testGetAge(){
         setUp();
-        int expResult = 10;
+        int expResult = 0;
         int result = animal.getAge();
         assertEquals(expResult, result);
     }
@@ -73,7 +70,7 @@ public class AnimalTest {
         public void testGetLastFeedingTime()
         {
             setUp();
-            LocalDateTime expResult = LocalDateTime.now().minusDays(1);
+            LocalDateTime expResult = LocalDateTime.of(2020, 10, 1, 23, 59);
             LocalDateTime result = animal.getLastFeedingTime();
             assertEquals(expResult, result);
         }
