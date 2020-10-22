@@ -17,11 +17,11 @@ import org.junit.Before;
  */
 public class AnimalTest {
 
-    private Animal animal;
+    private Animal instance;
     
     @Before
     public void setUp() {
-        animal = new Animal();
+        instance = new Animal();
     }
     
     // TODO - Need testGetId method
@@ -30,7 +30,7 @@ public class AnimalTest {
     public void testGetName() {
         setUp();
         String expected = "Unknown";
-        String actual = animal.getName();
+        String actual = instance.getName();
         assertEquals(expected, actual);
     }
     
@@ -42,15 +42,30 @@ public class AnimalTest {
     
     // TODO - Need testGetAge method (Ramiro)
     
-    // TODO - Need testGetFixed method (Calvin)
+    @org.junit.jupiter.api.Test
+    public void testGetFixed() {
+        setUp();
+        boolean expResult = false;
+        boolean result = instance.getFixed();
+        assertEquals(expResult, result);
+    }
     
     // TODO - Need testGetId method (Richard)
     
     // TODO - Need testGeLegs method (Thomas)
     
-    // TODO - Need testGetWeight method (Nathaniel)
+    @org.junit.Test
+    public void testGetWeight() {
+        setUp();
+        BigDecimal expected = new BigDecimal(0);
+        BigDecimal actual = instance.getWeight();
+        assertEquals(expected, actual);
+    }
     
     // TODO - Need testGetDateAdded method (Christopher)
+
+    
+    // TODO - Need testGetDateAdded method
     
     // TODO - Need testGetLastFeedingTime method (Ramiro)
     
