@@ -53,10 +53,13 @@ public class AnimalTest {
         assertEquals(expected, actual);
     }
 
-    // TODO
+    // TODO Nathaniel
     @org.junit.Test
     public void testSetName() {
-        fail("The test case is a prototype.");
+        setUp();
+        String expected = "Spot";
+        Animal instance = new Animal();
+        instance.setName(expected);
     }
 
     // TODO
@@ -65,7 +68,7 @@ public class AnimalTest {
         fail("The test case is a prototype.");
     }
 
-    // TODO
+    // TODO Nathaniel
     @org.junit.Test
     public void testSetGender() {
         fail("The test case is a prototype.");
