@@ -34,24 +34,24 @@ public class AnimalTest {
         assertEquals(expected, actual);
     }
     
-    // TODO - Need testGetSpecies method (Becky)
+    // TODO - Need testGetSpecies method (Jamesser)
     
-    // TODO - Need testGetGender method (Whitney)
+    // TODO - Need testGetGender method (Asaad)
     
-    // TODO - Need testGetName method (Chase)
+    // TODO - Need testGetName method (Mitchell)
     
-    // TODO - Need testGetAge method (Fadwa)
+    // TODO - Need testGetAge method (Ramiro)
     
-    // TODO - Need testGetFixed method (Ryan)
+    // TODO - Need testGetFixed method (Calvin)
     
-    // TODO - Need testGetId method (Joseph)
+    // TODO - Need testGetId method (Richard)
     
-    // TODO - Need testGeLegs method (Jory)
+    // TODO - Need testGeLegs method (Thomas)
     
-    // TODO - Need testGetWeight method (Chantal)
+    // TODO - Need testGetWeight method (Nathaniel)
     
-    // TODO - Need testGetDateAdded method
+    // TODO - Need testGetDateAdded method (Christopher)
     
-    // TODO - Need testGetLastFeedingTime method
+    // TODO - Need testGetLastFeedingTime method (Ramiro)
     
 }
