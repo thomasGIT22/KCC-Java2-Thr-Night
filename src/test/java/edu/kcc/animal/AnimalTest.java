@@ -122,7 +122,8 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testSetAge100Good() {
-        fail("The test case is a prototype.");
+        instance.setAge(100);
+        assertEquals(100, instance.getAge());
     }
     
     // TODO
@@ -134,7 +135,13 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testSetAgeAbove100Bad() {
-        fail("The test case is a prototype.");
+        instance.setAge(5);
+        try{
+            instance.setAge(101);
+            fail("testSetAgeAbove100Bad() setAge() accepted a value over 100");
+        }catch(Exception ex){       
+            assertEquals(5, instance.getAge());
+        }
     }
 
     @org.junit.Test
