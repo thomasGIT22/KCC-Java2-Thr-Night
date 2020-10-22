@@ -115,7 +115,8 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testSetAge0Good() {
-        fail("The test case is a prototype.");
+        instance.setAge(0);
+        assertEquals(0, instance.getAge());
     }
     
     // TODO
