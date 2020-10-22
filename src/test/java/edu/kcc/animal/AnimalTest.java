@@ -49,7 +49,7 @@ public class AnimalTest {
     @org.junit.jupiter.api.Test
     public void testGetFixed() {
         System.out.println("getFixed");
-        Animal instance = animal;
+        Animal instance = new Animal();
         boolean expResult = false;
         boolean result = instance.getFixed();
         assertEquals(expResult, result);
