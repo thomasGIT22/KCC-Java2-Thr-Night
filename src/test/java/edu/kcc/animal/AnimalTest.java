@@ -289,7 +289,12 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testToString() {
-        fail("The test case is a prototype.");
+        instance.setName("Frodo");
+        instance.setAge(2);
+        instance.setSpecies("Cat");
+        instance.setGender("Male");
+        instance.setWeight(new BigDecimal(10.5));
+        assertEquals("Frodo the Male Cat is 2 and has a weight of 10.5", instance.toString());
     }
 
     // TODO
