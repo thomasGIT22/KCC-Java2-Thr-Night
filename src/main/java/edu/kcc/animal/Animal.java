@@ -15,7 +15,7 @@ import java.util.List;
  *
  * @author k0519415
  */
-public class Animal {
+public class Animal implements Comparable<Animal> {
 
     private String id;
     private static List<String> idList = new ArrayList<>();
@@ -30,6 +30,22 @@ public class Animal {
     private LocalDateTime lastFeedingTime;
 
     // TODO: Need full constructor (Cash)
+    public Animal(String id, String name, String species,
+            String gender, int age, boolean fixed, int legs, BigDecimal weight,
+            LocalDate dateAdded, LocalDateTime lastFeedingTime) {
+        setId(id);
+        idList.add(id);
+        setName(name);
+        setSpecies(species);
+        setGender(gender);
+        setAge(age);
+        setFixed(fixed);
+        setLegs(legs);
+        setWeight(weight);
+        setDateAdded(dateAdded);
+        setLastFeedingTime(lastFeedingTime);
+    }
+
     public Animal() {
         id = "0";
         idList.add(id);
@@ -44,29 +60,30 @@ public class Animal {
         lastFeedingTime = LocalDateTime.of(2020, 10, 1, 23, 59); // October 1, 2020 at 11:59pm
     }
 
-    // TODO: Need getId method (Daniel)
-    // TODO: Need setId method (Sheryl)
+    // TODO: Fix idValidator - Can't compare strings with ==. 
+    // Move second if statement out of the loop. Set to private.
+    // Only allow it to change if it's "0". 
+    // Do not allow an id to be set if the id is already in the idList
+    // TODO: Need idValidator method (Nate)
+    private void idValidator(String id) {
+        if (idList.indexOf(id) >= 0) {
+            throw new IllegalArgumentException("The id enterd is "
+                    + "already taken");
+        }
+        if (!id.equals("0")) {
+            throw new IllegalArgumentException("Cannot reasign the id");
+        }
+    }
+
+    // TODO: Need getId method
+    public String getId() {
+        return "";
+    }
+
+    // TODO: Call the validator method before assigning the value
     public void setId(String id) {
         this.id = id;
     }
-
-    // TODO: Need idValidator method (Nate)
-    private void idValidator(String id) {
-
-        for (id.equals(id)) {
-            if (if != 0) {
-                throw new IllegalArgumentException("The id enterd is not a valid id. "
-                        + "make sure the id is not already in the id list.");
-            }
-
-        }
-        if (id != "0") {
-            throw new IllegalArgumentException("The id can only "
-                    + "change if it's \"0\".");
-        }
-    }
-    // Only allow it to change if it's "0". 
-    // Do not allow an id to be set if the id is already in the idList
 
     public String getName() {
         return name;
@@ -94,11 +111,7 @@ public class Animal {
     // TODO: Need setGender method (Jamesser)
     // TODO: Need genderValidator method (Asaad)
     // Only allow male and female. Only allow it to change if it's "Unknown".
-    public int getAge() {
-        return age;
-    }
     // TODO: Need setAge method (Mitchell)
-
     // TODO: Need ageValidator method - only allow ages 0 to 100 (Calvin)
     public void validateAge(int age) {
         if (age < 0 || age > 100) {
@@ -107,10 +120,6 @@ public class Animal {
     }
 
     // TODO: Need getFixed method (Richard)
-    public void setFixed(boolean fix) {
-        fixed = fix;
-    }
-
     // TODO: Need fixedValidator method (Thomas)
     // don't allow an animal that is already fixed to be fixed again
     // TODO: Need getLegs method (Nathaniel)
@@ -118,56 +127,108 @@ public class Animal {
         return legs;
     }
 
-    public void setLegs(int legs) {
-        this.legs = legs;
-    }
-
     // TODO: Need legsValidator method - only allow legs 0 to 4(Christopher)
     public BigDecimal getWeight() {
         return weight;
     }
 
+    // TODO: Call the validator method before assigning the value
+    public void setGender(String g) {
+        gender = g;
+    }
+
+    // TODO: Need genderValidator method - Only allow male and female. Only allow it to change if it's "Unknown".
+    private void genderValidator() {
+
+    }
+
+    // TODO: Need speciesValidator method - Only allow cat and dog. Only allow it to change if it's "Unknown".
+    private void speciesValidator() {
+
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    // TODO: Need setAge method. Call the validator method before assigning the value
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    // TODO: Need getFixed method
+    public boolean getFixed() {
+        return false;
+    }
+
+    // TODO: Call the validator method before assigning the value
+    public void setFixed(boolean fix) {
+        fixed = fix;
+    }
+
+    // TODO: Need fixedValidator method - don't allow an animal that is already fixed to be fixed again 
+    private void fixedValidator() {
+
+    }
+
+    // TODO: Call the validator method before assigning the value
+    public void setLegs(int legs) {
+        this.legs = legs;
+    }
+
+    // TODO: Need legsValidator method - only allow legs 0 to 4
+    private void legsValidator() {
+
+    }
+
+    // TODO: Call the validator method before assigning the value
     public void setWeight(BigDecimal animalWeight) {
         weight = animalWeight;
     }
 
-    // TODO: Need weightValidator method - only allow weight 0.0 to 1000.0 (Daniel)
+    // TODO: Need weightValidator method - only allow weight 0.0 to 1000.0 
+    private void weightValidator() {
+
+    }
+
     public LocalDate getDateAdded() {
         return dateAdded;
     }
 
+    // TODO: Call the validator method before assigning the value
     public void setDateAdded(LocalDate dateAdded) {
         this.dateAdded = dateAdded;
     }
 
-    // TODO: Need dateValidator method (Cash)
-    // only allow dates up to a week in the past
-    // TODO: Need getLastFeedingTime method (Sheryl)
+    // TODO - Include a string inside the parenthesis of the IllegalArgumentException to say what is wrong. Set to private.
+    // TODO - Don't allow future dates.
+    public void dateValidator(LocalDate date) {
+        if (date.isBefore(LocalDate.now().minusWeeks(1))) {
+            throw new IllegalArgumentException();
+        }
+    }
+
     public LocalDateTime getLastFeedingTime() {
         return lastFeedingTime;
     }
 
+    // TODO: Call the validator method before assigning the value
     public void setLastFeedingTime(LocalDateTime ldt) {
         lastFeedingTime = ldt;
     }
 
-    // TODO: Need feedingValidator method (Nate)
-//<<<<<<< HEAD
     private void feedingValidator(LocalDateTime lastFeedingTime) {
         if (LocalDateTime.now().minusDays(2).isBefore(lastFeedingTime)) {
             throw new IllegalArgumentException("Last feeding times"
                     + "no less than two days in the past");
         }
-    }    // only allow day/times up to two days in the past
+    }
 
-//=======
-    // only allow day/times up to two days in the past
-//>>>>>>> 084e0f8f8bd7e909fa9eec88069f31a883ffa682
-    // TODO: Need toString method (Jakub)
     @Override
     public String toString() {
         return name + " the " + gender + " " + species + " is " + age
                 + " and has a weight of " + weight.toString();
+
         /*
         return "Name: " + name + "\n" +
                 "Gender: " + gender + "\n" +
@@ -176,12 +237,10 @@ public class Animal {
                 "Weight: " + weight;
          */
     }
-    //include name, species, gender, age, and weight 
 
-    // TODO: Need compareTo method //Musab
-    // Compare by their species first, then by their name 
-    boolean getFixed() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    // TODO: Need compareTo method. Compare by their species first, then by their name 
+    public int compareTo(Animal other) {
+        return 0;
     }
 
 }
