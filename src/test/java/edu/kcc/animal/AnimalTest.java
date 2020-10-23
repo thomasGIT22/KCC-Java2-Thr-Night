@@ -14,10 +14,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-/**
- *
- * @author marchauschildt
- */
+
 public class AnimalTest {
     
     private Animal instance;
@@ -312,11 +309,10 @@ public class AnimalTest {
     public void testCompareToCatBetatoCatAlpha() {
         fail("The test case is a prototype.");
     }
-    
+
     // TODO
     @org.junit.Test
     public void testCompareToCatAlphatoCatAlpha() {
         fail("The test case is a prototype.");
-    }
-    
+    }  
 }
