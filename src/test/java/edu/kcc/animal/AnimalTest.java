@@ -71,7 +71,10 @@ public class AnimalTest {
     // TODO Nathaniel
     @org.junit.Test
     public void testSetGender() {
-        fail("The test case is a prototype.");
+        setUp();
+        String expected = "Male";
+        Animal instance = new Animal();
+        instance.setGender(expected);
     }
     
     // TODO
