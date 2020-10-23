@@ -155,16 +155,22 @@ public class AnimalTest {
         fail("The test case is a prototype.");
     }
 
-    // TODO
+    //Sheryl
     @org.junit.Test
     public void testGetLegs() {
-        fail("The test case is a prototype.");
+        setUp();
+        int expResult = 4;
+        int result = instance.getLegs();
+        assertEquals(expResult, result);
     }
 
-    // TODO
+    //Sheryl
     @org.junit.Test
     public void testSetLegsTo4Good() {
-        fail("The test case is a prototype.");
+        setUp();
+        instance.setLegs(4);
+        int expResult = 4;
+        assertEquals(expResult, instance.getLegs());
     }
     
     // TODO
