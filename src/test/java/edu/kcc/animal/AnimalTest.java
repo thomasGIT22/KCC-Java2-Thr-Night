@@ -123,10 +123,15 @@ public class AnimalTest {
         assertEquals(100, instance.getAge());
     }
     
-    // TODO
     @org.junit.Test
     public void testSetAgeNegativeBad() {
-        fail("The test case is a prototype.");
+        try {
+            setUp();
+            instance.setAge(-10);
+            fail("Test Failed. setAge allowed a negative number.");
+        } catch (Exception ex) {
+            assertTrue(true);
+        }
     }
     
     // TODO
