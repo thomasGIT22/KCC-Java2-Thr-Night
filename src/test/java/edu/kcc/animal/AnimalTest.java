@@ -291,10 +291,10 @@ public class AnimalTest {
     public void testToString() {
         instance.setName("Frodo");
         instance.setAge(2);
-        instance.setSpecies("Cat");
-        instance.setGender("Male");
+        instance.setSpecies("cat");
+        instance.setGender("male");
         instance.setWeight(new BigDecimal(10.5));
-        assertEquals("Frodo the Male Cat is 2 and has a weight of 10.5", instance.toString());
+        assertEquals("Frodo the male cat is 2 and has a weight of 10.5", instance.toString());
     }
 
     // TODO

@@ -112,12 +112,18 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Call the validator method before assigning the value
     public void setSpecies(String species){
-        this.species = species;
+        speciesValidator(species);
+        this.species = species.toLowerCase();
     }
     
     // TODO: Need speciesValidator method - Only allow cat and dog. Only allow it to change if it's "Unknown".
-    private void speciesValidator() {
-        
+    private void speciesValidator(String species) {
+        if(this.species.compareTo("Unknown") != 0){
+            throw new IllegalArgumentException("Species has already been set");
+        }
+        if(!species.equalsIgnoreCase("cat") && !species.equalsIgnoreCase("dog")){
+            throw new IllegalArgumentException("Species must be cat or dog");
+        }
     }
     
     public int getAge(){
