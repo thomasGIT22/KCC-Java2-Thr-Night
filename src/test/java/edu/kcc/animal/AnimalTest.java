@@ -14,9 +14,11 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AnimalTest {
-    
+
     private Animal instance;
 
     @Before
@@ -134,16 +136,22 @@ public class AnimalTest {
         }
     }
     
-    // TODO
+
+    // TODO  Asaad good
     @org.junit.Test
     public void testSetAgeAbove100Bad() {
-        instance.setAge(5);
-        try{
-            instance.setAge(101);
-            fail("testSetAgeAbove100Bad() setAge() accepted a value over 100");
-        }catch(Exception ex){       
-            assertEquals(5, instance.getAge());
+        setUp();
+       
+        
+        try  {
+            instance.setAge(102);
+            fail("you can't set age above 100");
+        }catch( IllegalArgumentException ex)
+        {
+            assertTrue(true);
         }
+            
+        
     }
 
     @org.junit.Test
@@ -154,18 +162,31 @@ public class AnimalTest {
         assertEquals(expResult, result);
     }
 
-    // TODO
+
+    // TODO gooodddddd
     @org.junit.Test
     public void testSetFixedFalseToTrueGood() {
-        fail("The test case is a prototype.");
+        setUp();
+        instance.setFixed(true);
+        assertEquals(true, instance.getFixed());
     }
-    
+     
     // TODO
     @org.junit.Test
     public void testSetFixedTruetoFalseBad() {
-        fail("The test case is a prototype.");
+        
+         setUp();
+         try {
+            instance.setFixed(false);
+            fail("Test Failed. setFixed allowed a true.");
+        } catch (Exception ex) {
+            assertTrue(true);
+        }
     }
+        
+    
 
+    
     //Sheryl
     @org.junit.Test
     public void testGetLegs() {
@@ -182,6 +203,7 @@ public class AnimalTest {
         instance.setLegs(4);
         int expResult = 4;
         assertEquals(expResult, instance.getLegs());
+
     }
     
     // TODO
