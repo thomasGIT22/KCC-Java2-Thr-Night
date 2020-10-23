@@ -44,6 +44,7 @@ public class Animal implements Comparable<Animal>{
         setDateAdded(dateAdded);
         setLastFeedingTime(lastFeedingTime);
     }
+
     
     public Animal() {
         id = "0";
@@ -87,7 +88,7 @@ public class Animal implements Comparable<Animal>{
     public String getName() {
         return name;
     }
-  
+    
     public void setName(String name) {
         this.name = name;
     }

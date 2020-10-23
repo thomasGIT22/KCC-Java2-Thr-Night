@@ -19,6 +19,7 @@ import static org.junit.Assert.*;
 //import org.junit.jupiter.api.BeforeAll;
 //import org.junit.jupiter.api.BeforeEach;
 //import org.junit.jupiter.api.Test;
+
 /**
  *
  * @author marchauschildt
@@ -316,125 +317,5 @@ public class AnimalTest {
     @org.junit.Test
     public void testCompareToCatAlphatoCatAlpha() {
         fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of idValidator method, of class Animal.
-     */
-    @Test
-    public void testIdValidator() {
-        System.out.println("idValidator");
-        String id = "";
-        Animal instance = new Animal();
-        instance.idValidator(id);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setAge method, of class Animal.
-     */
-    @Test
-    public void testSetAge() {
-        System.out.println("setAge");
-        int age = 0;
-        Animal instance = new Animal();
-        instance.setAge(age);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setFixed method, of class Animal.
-     */
-    @Test
-    public void testSetFixed() {
-        System.out.println("setFixed");
-        boolean fix = false;
-        Animal instance = new Animal();
-        instance.setFixed(fix);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setLegs method, of class Animal.
-     */
-    @Test
-    public void testSetLegs() {
-        System.out.println("setLegs");
-        int legs = 0;
-        Animal instance = new Animal();
-        instance.setLegs(legs);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setWeight method, of class Animal.
-     */
-    @Test
-    public void testSetWeight() {
-        System.out.println("setWeight");
-        BigDecimal animalWeight = null;
-        Animal instance = new Animal();
-        instance.setWeight(animalWeight);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setDateAdded method, of class Animal.
-     */
-    @Test
-    public void testSetDateAdded() {
-        System.out.println("setDateAdded");
-        LocalDate dateAdded = null;
-        Animal instance = new Animal();
-        instance.setDateAdded(dateAdded);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of dateValidator method, of class Animal.
-     */
-    @Test
-    public void testDateValidator() {
-        System.out.println("dateValidator");
-        LocalDate date = null;
-        Animal instance = new Animal();
-        instance.dateValidator(date);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setLastFeedingTime method, of class Animal.
-     */
-    @Test
-    public void testSetLastFeedingTime() {
-        System.out.println("setLastFeedingTime");
-        LocalDateTime ldt = null;
-        Animal instance = new Animal();
-        instance.setLastFeedingTime(ldt);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of compareTo method, of class Animal.
-     */
-    @Test
-    public void testCompareTo() {
-        System.out.println("compareTo");
-        Animal other = null;
-        Animal instance = new Animal();
-        int expResult = 0;
-        int result = instance.compareTo(other);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
+    }  
 }
