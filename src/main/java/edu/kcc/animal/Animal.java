@@ -98,12 +98,18 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Call the validator method before assigning the value
     public void setGender(String g){
-        gender = g;
+        genderValidator(g);
+        gender = g.toLowerCase();
     }
     
     // TODO: Need genderValidator method - Only allow male and female. Only allow it to change if it's "Unknown".
-    private void genderValidator() {
-        
+    private void genderValidator(String gender) {
+        if(this.gender.compareTo("Unknown") != 0){
+            throw new IllegalArgumentException("Gender has already been set");
+        }
+        if(!gender.equalsIgnoreCase("male") && !gender.equalsIgnoreCase("female")){
+            throw new IllegalArgumentException("Gender must be male or female.");
+        }
     }
     
     public String getSpecies() {
