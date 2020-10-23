@@ -222,7 +222,12 @@ public class Animal implements Comparable<Animal>{
 
     // TODO: Need compareTo method. Compare by their species first, then by their name 
     public int compareTo(Animal other) {
-        return 0;
+        int result;
+        result = this.getSpecies().compareTo(other.getSpecies());
+        if(result == 0){
+            result = this.getName().compareTo(other.getName());
+        }
+        return result;
     }
     
 }
