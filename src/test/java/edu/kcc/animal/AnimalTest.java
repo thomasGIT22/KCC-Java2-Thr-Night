@@ -8,17 +8,17 @@ package edu.kcc.animal;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class AnimalTest {
 
+public class AnimalTest {
     private Animal instance;
 
     @Before
@@ -29,7 +29,7 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testGetId() {
-        fail("The test case is a prototype.");
+        assertTrue(false);
     }
 
     // TODO
@@ -98,17 +98,18 @@ public class AnimalTest {
         fail("The test case is a prototype.");
     }
     
+
+    public void testGetAge(){
+        setUp();
+        int expResult = 0;
+        int result = instance.getAge();
+        assertEquals(expResult, result);
+    }
+    
     // TODO
     @org.junit.Test
     public void testSetSpeciesCatToDogBad() {
         fail("The test case is a prototype.");
-    }
-
-    // TODO
-    @org.junit.Test
-    public void testGetAge() {
-        instance.setAge(2);
-        assertEquals(2, instance.getAge());
     }
 
     // TODO
@@ -141,8 +142,6 @@ public class AnimalTest {
     @org.junit.Test
     public void testSetAgeAbove100Bad() {
         setUp();
-       
-        
         try  {
             instance.setAge(102);
             fail("you can't set age above 100");
@@ -264,9 +263,8 @@ public class AnimalTest {
         try{
             instance.setWeight(BigDecimal.valueOf(1001));
             fail("You cant set weight over 1000.");
-            }catch(Exception e){
-                assertTrue(true);
-            }
+        }catch(Exception e){
+            assertTrue(true);
         }
     }
 
@@ -299,11 +297,14 @@ public class AnimalTest {
     public void testSetDateAddedTomorrowBad() {
         fail("The test case is a prototype.");
     }
-
-    // TODO
-    @org.junit.Test
-    public void testGetLastFeedingTime() {
-        fail("The test case is a prototype.");
+    
+    // TODO - Need testGetLastFeedingTime method (Ramiro)
+    public void testGetLastFeedingTime()
+    {
+        setUp();
+        LocalDateTime expResult = LocalDateTime.of(2020, 10, 1, 23, 59);
+        LocalDateTime result = instance.getLastFeedingTime();
+        assertEquals(expResult, result);
     }
 
     // TODO
@@ -352,7 +353,7 @@ public class AnimalTest {
     public void testCompareToDogtoCat() {
         fail("The test case is a prototype.");
     }
-    
+
     // TODO
     @org.junit.Test
     public void testCompareToCatAlphatoCatBeta() {
@@ -369,5 +370,6 @@ public class AnimalTest {
     @org.junit.Test
     public void testCompareToCatAlphatoCatAlpha() {
         fail("The test case is a prototype.");
+
     }  
 }
