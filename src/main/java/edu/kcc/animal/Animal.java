@@ -126,7 +126,9 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Need setAge method. Call the validator method before assigning the value
     public void setAge(int age) {
+
         this.age = age;
+
     }
     
     private void validateAge(int age){
