@@ -105,19 +105,22 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testGetAge() {
-        fail("The test case is a prototype.");
+        instance.setAge(2);
+        assertEquals(2, instance.getAge());
     }
 
     // TODO
     @org.junit.Test
     public void testSetAge0Good() {
-        fail("The test case is a prototype.");
+        instance.setAge(0);
+        assertEquals(0, instance.getAge());
     }
     
     // TODO
     @org.junit.Test
     public void testSetAge100Good() {
-        fail("The test case is a prototype.");
+        instance.setAge(100);
+        assertEquals(100, instance.getAge());
     }
     
     // TODO
@@ -129,7 +132,13 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testSetAgeAbove100Bad() {
-        fail("The test case is a prototype.");
+        instance.setAge(5);
+        try{
+            instance.setAge(101);
+            fail("testSetAgeAbove100Bad() setAge() accepted a value over 100");
+        }catch(Exception ex){       
+            assertEquals(5, instance.getAge());
+        }
     }
 
     @org.junit.Test
@@ -283,7 +292,12 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testToString() {
-        fail("The test case is a prototype.");
+        instance.setName("Frodo");
+        instance.setAge(2);
+        instance.setSpecies("cat");
+        instance.setGender("male");
+        instance.setWeight(new BigDecimal(10.5));
+        assertEquals("Frodo the male cat is 2 and has a weight of 10.5", instance.toString());
     }
 
     // TODO

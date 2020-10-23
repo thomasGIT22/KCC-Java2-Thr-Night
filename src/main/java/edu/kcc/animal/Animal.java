@@ -98,12 +98,18 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Call the validator method before assigning the value
     public void setGender(String g){
-        gender = g;
+        genderValidator(g);
+        gender = g.toLowerCase();
     }
     
     // TODO: Need genderValidator method - Only allow male and female. Only allow it to change if it's "Unknown".
-    private void genderValidator() {
-        
+    private void genderValidator(String gender) {
+        if(this.gender.compareTo("Unknown") != 0){
+            throw new IllegalArgumentException("Gender has already been set");
+        }
+        if(!gender.equalsIgnoreCase("male") && !gender.equalsIgnoreCase("female")){
+            throw new IllegalArgumentException("Gender must be male or female.");
+        }
     }
     
     public String getSpecies() {
@@ -112,12 +118,18 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Call the validator method before assigning the value
     public void setSpecies(String species){
-        this.species = species;
+        speciesValidator(species);
+        this.species = species.toLowerCase();
     }
     
     // TODO: Need speciesValidator method - Only allow cat and dog. Only allow it to change if it's "Unknown".
-    private void speciesValidator() {
-        
+    private void speciesValidator(String species) {
+        if(this.species.compareTo("Unknown") != 0){
+            throw new IllegalArgumentException("Species has already been set");
+        }
+        if(!species.equalsIgnoreCase("cat") && !species.equalsIgnoreCase("dog")){
+            throw new IllegalArgumentException("Species must be cat or dog");
+        }
     }
     
     public int getAge(){
@@ -126,7 +138,8 @@ public class Animal implements Comparable<Animal>{
     
     // TODO: Need setAge method. Call the validator method before assigning the value
     public void setAge(int age) {
-        
+        validateAge(age);
+        this.age = age;
     }
     
     private void validateAge(int age){
