@@ -14,16 +14,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-//import org.junit.jupiter.api.AfterAll;
-//import org.junit.jupiter.api.AfterEach;
-//import org.junit.jupiter.api.BeforeAll;
-//import org.junit.jupiter.api.BeforeEach;
-//import org.junit.jupiter.api.Test;
 
-/**
- *
- * @author marchauschildt
- */
 public class AnimalTest {
     
     private Animal instance;
@@ -161,16 +152,22 @@ public class AnimalTest {
         fail("The test case is a prototype.");
     }
 
-    // TODO
+    //Sheryl
     @org.junit.Test
     public void testGetLegs() {
-        fail("The test case is a prototype.");
+        setUp();
+        int expResult = 4;
+        int result = instance.getLegs();
+        assertEquals(expResult, result);
     }
 
-    // TODO
+    //Sheryl
     @org.junit.Test
     public void testSetLegsTo4Good() {
-        fail("The test case is a prototype.");
+        setUp();
+        instance.setLegs(4);
+        int expResult = 4;
+        assertEquals(expResult, instance.getLegs());
     }
     
     // TODO
@@ -312,7 +309,7 @@ public class AnimalTest {
     public void testCompareToCatBetatoCatAlpha() {
         fail("The test case is a prototype.");
     }
-    
+
     // TODO
     @org.junit.Test
     public void testCompareToCatAlphatoCatAlpha() {
