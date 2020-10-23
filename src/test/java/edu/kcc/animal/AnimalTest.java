@@ -14,15 +14,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
-/**
- *
- * @author marchauschildt
- */
 public class AnimalTest {
 
     private Animal instance;
@@ -113,32 +107,39 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testGetAge() {
-        fail("The test case is a prototype.");
+        instance.setAge(2);
+        assertEquals(2, instance.getAge());
     }
 
     // TODO
     @org.junit.Test
     public void testSetAge0Good() {
-        fail("The test case is a prototype.");
+        instance.setAge(0);
+        assertEquals(0, instance.getAge());
     }
     
     // TODO
     @org.junit.Test
     public void testSetAge100Good() {
-        fail("The test case is a prototype.");
+        instance.setAge(100);
+        assertEquals(100, instance.getAge());
     }
     
-    // TODO
     @org.junit.Test
     public void testSetAgeNegativeBad() {
-        fail("The test case is a prototype.");
+        try {
+            setUp();
+            instance.setAge(-10);
+            fail("Test Failed. setAge allowed a negative number.");
+        } catch (Exception ex) {
+            assertTrue(true);
+        }
     }
     
 
     // TODO  Asaad good
     @org.junit.Test
     public void testSetAgeAbove100Bad() {
-      
         setUp();
        
         
@@ -152,7 +153,6 @@ public class AnimalTest {
             
         
     }
-// Asaad good
 
     @org.junit.Test
     public void testGetFixed() {
@@ -241,19 +241,33 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testSetWeightTo1000Good() {
+        
         fail("The test case is a prototype.");
     }
     
     // TODO
     @org.junit.Test
     public void testSetWeightNegativeBad() {
-        fail("The test case is a prototype.");
+        setUp();
+        try{
+            instance.setWeight(BigDecimal.valueOf(-1.00));
+            fail("You cant set weight as a negative number.");
+        }catch(Exception e){
+            assertTrue(true);
+        }
     }
     
     // TODO
     @org.junit.Test
     public void testSetWeightAbove1000Bad() {
-        fail("The test case is a prototype.");
+        setUp();
+        try{
+            instance.setWeight(BigDecimal.valueOf(1001));
+            fail("You cant set weight over 1000.");
+            }catch(Exception e){
+                assertTrue(true);
+            }
+        }
     }
 
     // TODO
@@ -319,7 +333,12 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testToString() {
-        fail("The test case is a prototype.");
+        instance.setName("Frodo");
+        instance.setAge(2);
+        instance.setSpecies("cat");
+        instance.setGender("male");
+        instance.setWeight(new BigDecimal(10.5));
+        assertEquals("Frodo the male cat is 2 and has a weight of 10.5", instance.toString());
     }
 
     // TODO
@@ -345,11 +364,10 @@ public class AnimalTest {
     public void testCompareToCatBetatoCatAlpha() {
         fail("The test case is a prototype.");
     }
-    
+
     // TODO
     @org.junit.Test
     public void testCompareToCatAlphatoCatAlpha() {
         fail("The test case is a prototype.");
-    }
-    
+    }  
 }
