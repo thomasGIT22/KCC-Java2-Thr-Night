@@ -219,19 +219,33 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testSetWeightTo1000Good() {
+        
         fail("The test case is a prototype.");
     }
     
     // TODO
     @org.junit.Test
     public void testSetWeightNegativeBad() {
-        fail("The test case is a prototype.");
+        setUp();
+        try{
+            instance.setWeight(BigDecimal.valueOf(-1.00));
+            fail("You cant set weight as a negative number.");
+        }catch(Exception e){
+            assertTrue(true);
+        }
     }
     
     // TODO
     @org.junit.Test
     public void testSetWeightAbove1000Bad() {
-        fail("The test case is a prototype.");
+        setUp();
+        try{
+            instance.setWeight(BigDecimal.valueOf(1001));
+            fail("You cant set weight over 1000.");
+            }catch(Exception e){
+                assertTrue(true);
+            }
+        }
     }
 
     // TODO
