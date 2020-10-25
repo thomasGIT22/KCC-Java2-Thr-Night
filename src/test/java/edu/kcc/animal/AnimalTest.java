@@ -401,7 +401,7 @@ public class AnimalTest {
         alpha2.setSpecies("Cat");
         alpha2.setName("Alpha");
         int result = alpha.compareTo(alpha2);
-        assertTrue(result==-1, "failed compare cat alpha to cat alpha");
+        assertTrue(result==0, "failed compare cat alpha to cat alpha");
     }
     
 }
