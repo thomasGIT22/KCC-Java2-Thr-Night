@@ -155,7 +155,8 @@ public class AnimalTest {
 
     @org.junit.Test
     public void testGetFixed() {
-        setUp();
+        System.out.println("getFixed");
+        Animal instance = new Animal();
         boolean expResult = false;
         boolean result = instance.getFixed();
         assertEquals(expResult, result);
@@ -345,31 +346,62 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testCompareToCattoDog() {
-        fail("The test case is a prototype.");
+        Animal cat = new Animal();
+        cat.setSpecies("Cat");
+        Animal dog = new Animal();
+        dog.setSpecies("Dog");
+        int result = cat.compareTo(dog);
+        assertTrue(result==-1, "failed compare cat to dog");
     }
     
     // TODO
     @org.junit.Test
     public void testCompareToDogtoCat() {
-        fail("The test case is a prototype.");
+        Animal cat = new Animal();
+        cat.setSpecies("Cat");
+        Animal dog = new Animal();
+        dog.setSpecies("Dog");
+        int result = dog.compareTo(cat);
+        assertTrue(result==1, "failed compare dog to cat");
     }
 
     // TODO
     @org.junit.Test
     public void testCompareToCatAlphatoCatBeta() {
-        fail("The test case is a prototype.");
+        Animal alpha = new Animal();
+        alpha.setSpecies("Cat");
+        alpha.setName("Alpha");
+        Animal beta = new Animal();
+        beta.setSpecies("Cat");
+        beta.setName("Beta");
+        int result = alpha.compareTo(beta);
+        assertTrue(result==-1, "failed compare cat alpha to cat beta");
     }
     
     // TODO
     @org.junit.Test
     public void testCompareToCatBetatoCatAlpha() {
-        fail("The test case is a prototype.");
+        Animal alpha = new Animal();
+        alpha.setSpecies("Cat");
+        alpha.setName("Alpha");
+        Animal beta = new Animal();
+        beta.setSpecies("Cat");
+        beta.setName("Beta");
+        int result = beta.compareTo(alpha);
+        assertTrue(result==1, "failed compare cat beta to cat alpha");
     }
 
     // TODO
     @org.junit.Test
     public void testCompareToCatAlphatoCatAlpha() {
-        fail("The test case is a prototype.");
-
-    }  
+        Animal alpha = new Animal();
+        alpha.setSpecies("Cat");
+        alpha.setName("Alpha");
+        Animal alpha2 = new Animal();
+        alpha2.setSpecies("Cat");
+        alpha2.setName("Alpha");
+        int result = alpha.compareTo(alpha2);
+        assertTrue(result==0, "failed compare cat alpha to cat alpha");
+    }
+    
 }
