@@ -8,19 +8,17 @@ package edu.kcc.animal;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-/**
- *
- * @author marchauschildt
- */
+
+
 public class AnimalTest {
-    
     private Animal instance;
 
     @Before
@@ -31,7 +29,7 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testGetId() {
-        fail("The test case is a prototype.");
+        assertTrue(false);
     }
 
     // TODO
@@ -100,6 +98,14 @@ public class AnimalTest {
         fail("The test case is a prototype.");
     }
     
+
+    public void testGetAge(){
+        setUp();
+        int expResult = 0;
+        int result = instance.getAge();
+        assertEquals(expResult, result);
+    }
+    
     // TODO
     @org.junit.Test
     public void testSetSpeciesCatToDogBad() {
@@ -108,32 +114,43 @@ public class AnimalTest {
 
     // TODO
     @org.junit.Test
-    public void testGetAge() {
-        fail("The test case is a prototype.");
-    }
-
-    // TODO
-    @org.junit.Test
     public void testSetAge0Good() {
-        fail("The test case is a prototype.");
+        instance.setAge(0);
+        assertEquals(0, instance.getAge());
     }
     
     // TODO
     @org.junit.Test
     public void testSetAge100Good() {
-        fail("The test case is a prototype.");
+        instance.setAge(100);
+        assertEquals(100, instance.getAge());
     }
     
-    // TODO
     @org.junit.Test
     public void testSetAgeNegativeBad() {
-        fail("The test case is a prototype.");
+        try {
+            setUp();
+            instance.setAge(-10);
+            fail("Test Failed. setAge allowed a negative number.");
+        } catch (Exception ex) {
+            assertTrue(true);
+        }
     }
     
-    // TODO
+
+    // TODO  Asaad good
     @org.junit.Test
     public void testSetAgeAbove100Bad() {
-        fail("The test case is a prototype.");
+        setUp();
+        try  {
+            instance.setAge(102);
+            fail("you can't set age above 100");
+        }catch( IllegalArgumentException ex)
+        {
+            assertTrue(true);
+        }
+            
+        
     }
 
     @org.junit.Test
@@ -145,28 +162,48 @@ public class AnimalTest {
         assertEquals(expResult, result);
     }
 
-    // TODO
+
+    // TODO gooodddddd
     @org.junit.Test
     public void testSetFixedFalseToTrueGood() {
-        fail("The test case is a prototype.");
+        setUp();
+        instance.setFixed(true);
+        assertEquals(true, instance.getFixed());
     }
-    
+     
     // TODO
     @org.junit.Test
     public void testSetFixedTruetoFalseBad() {
-        fail("The test case is a prototype.");
+        
+         setUp();
+         try {
+            instance.setFixed(false);
+            fail("Test Failed. setFixed allowed a true.");
+        } catch (Exception ex) {
+            assertTrue(true);
+        }
     }
+        
+    
 
-    // TODO
+    
+    //Sheryl
     @org.junit.Test
     public void testGetLegs() {
-        fail("The test case is a prototype.");
+        setUp();
+        int expResult = 4;
+        int result = instance.getLegs();
+        assertEquals(expResult, result);
     }
 
-    // TODO
+    //Sheryl
     @org.junit.Test
     public void testSetLegsTo4Good() {
-        fail("The test case is a prototype.");
+        setUp();
+        instance.setLegs(4);
+        int expResult = 4;
+        assertEquals(expResult, instance.getLegs());
+
     }
     
     // TODO
@@ -204,19 +241,32 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testSetWeightTo1000Good() {
+        
         fail("The test case is a prototype.");
     }
     
     // TODO
     @org.junit.Test
     public void testSetWeightNegativeBad() {
-        fail("The test case is a prototype.");
+        setUp();
+        try{
+            instance.setWeight(BigDecimal.valueOf(-1.00));
+            fail("You cant set weight as a negative number.");
+        }catch(Exception e){
+            assertTrue(true);
+        }
     }
     
     // TODO
     @org.junit.Test
     public void testSetWeightAbove1000Bad() {
-        fail("The test case is a prototype.");
+        setUp();
+        try{
+            instance.setWeight(BigDecimal.valueOf(1001));
+            fail("You cant set weight over 1000.");
+        }catch(Exception e){
+            assertTrue(true);
+        }
     }
 
     // TODO
@@ -248,11 +298,14 @@ public class AnimalTest {
     public void testSetDateAddedTomorrowBad() {
         fail("The test case is a prototype.");
     }
-
-    // TODO
-    @org.junit.Test
-    public void testGetLastFeedingTime() {
-        fail("The test case is a prototype.");
+    
+    // TODO - Need testGetLastFeedingTime method (Ramiro)
+    public void testGetLastFeedingTime()
+    {
+        setUp();
+        LocalDateTime expResult = LocalDateTime.of(2020, 10, 1, 23, 59);
+        LocalDateTime result = instance.getLastFeedingTime();
+        assertEquals(expResult, result);
     }
 
     // TODO
@@ -282,7 +335,12 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testToString() {
-        fail("The test case is a prototype.");
+        instance.setName("Frodo");
+        instance.setAge(2);
+        instance.setSpecies("cat");
+        instance.setGender("male");
+        instance.setWeight(new BigDecimal(10.5));
+        assertEquals("Frodo the male cat is 2 and has a weight of 10.5", instance.toString());
     }
 
     // TODO
@@ -306,7 +364,7 @@ public class AnimalTest {
         int result = dog.compareTo(cat);
         assertTrue(result==1, "failed compare dog to cat");
     }
-    
+
     // TODO
     @org.junit.Test
     public void testCompareToCatAlphatoCatBeta() {
@@ -332,7 +390,7 @@ public class AnimalTest {
         int result = beta.compareTo(alpha);
         assertTrue(result==1, "failed compare cat beta to cat alpha");
     }
-    
+
     // TODO
     @org.junit.Test
     public void testCompareToCatAlphatoCatAlpha() {
