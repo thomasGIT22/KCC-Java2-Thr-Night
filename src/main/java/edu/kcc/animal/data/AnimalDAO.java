@@ -8,15 +8,15 @@ import java.util.ArrayList;
  * @author PSUser
  */
 public interface AnimalDAO {
-    void createAnimalRecord(Animal animal);
+    void createAnimalRecord(Animal animal) throws AnimalDataException;
     
-    Animal getAnimalById(String id);
+    Animal getAnimalById(String id) throws AnimalDataException;
     
-    ArrayList<Animal> getAllAnimals();
+    ArrayList<Animal> getAllAnimals() throws AnimalDataException;
     
-    void updateAnimal(Animal original, Animal updated);
+    void updateAnimal(Animal original, Animal updated) throws AnimalDataException;
     
-    void deleteAnimal(Animal animal);
+    void deleteAnimal(Animal animal) throws AnimalDataException;
     
-    void deleteAnimal(String id);
+    void deleteAnimal(String id) throws AnimalDataException;
 } //end of interface 
