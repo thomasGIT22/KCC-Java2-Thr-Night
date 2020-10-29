@@ -95,7 +95,7 @@ public class AnimalTest {
             instance.setGender("Hoopla");
             fail("testSetGenderNotMaleFemaleBad failed");
         }catch (Exception ex){
-            assertEquals( null, instance.getGender());      
+            assertEquals( "Unknown", instance.getGender());      
         }
     }
     
@@ -133,7 +133,13 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testSetSpeciesNotCatorDogBad() {
-        fail("The test case is a prototype.");
+        setUp();
+        try{
+            instance.setSpecies("Dolphin");
+            fail("Species was allowed to be something that isnt cat or dog");
+        }catch (Exception ex){
+            assertEquals("Unknown", instance.getSpecies());
+        }
     }
     
 
