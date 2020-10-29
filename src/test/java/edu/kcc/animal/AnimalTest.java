@@ -115,7 +115,10 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testGetSpecies() {
-        fail("The test case is a prototype.");
+        setUp();
+        String expected = "cat";
+        instance.setSpecies("cat");
+        assertEquals(expected, instance.getSpecies());
     }
 
     // TODO
