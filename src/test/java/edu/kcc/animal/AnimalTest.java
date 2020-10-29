@@ -73,7 +73,10 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testGetGender() {
-        fail("The test case is a prototype.");
+        setUp();
+        String expected = "male";
+        instance.setGender("male");
+        assertEquals(expected, instance.getGender());
     }
 
     // TODO
@@ -424,7 +427,7 @@ public class AnimalTest {
         System.out.println("idValidator");
         String id = "";
         Animal instance = new Animal();
-        instance.idValidator(id);
+        //instance.idValidator(id);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
