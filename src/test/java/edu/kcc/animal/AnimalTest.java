@@ -58,7 +58,6 @@ public class AnimalTest {
 
     @org.junit.Test
     public void testGetName() {
-        setUp();
         String expected = "Unknown";
         String actual = instance.getName();
         assertEquals(expected, actual);
@@ -67,28 +66,23 @@ public class AnimalTest {
     // TODO Nathaniel
     @org.junit.Test
     public void testSetName() {
-        setUp();
-        String expected = "Spot";
-        Animal instance = new Animal();
-        instance.setName(expected);
+        instance.setName("Spot");
+        assertEquals("Spot", instance.getName());
     }
 
     // TODO Nathaniel
     @org.junit.Test
     public void testGetGender() {
-        Animal instance = new Animal();
-        String expected = "Female";
-        String result = instance.getGender();
-        assertEquals(expected, result);
+        String expected = "Unknown";
+        String actual = instance.getGender();
+        assertEquals(expected, actual);
     }
 
     // TODO Nathaniel
     @org.junit.Test
     public void testSetGender() {
-        setUp();
-        String expected = "Male";
-        Animal instance = new Animal();
-        instance.setGender(expected);
+        instance.setGender("male");
+        assertEquals("male", instance.getGender());
     }
     
     // TODO
