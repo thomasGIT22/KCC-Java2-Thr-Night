@@ -90,12 +90,26 @@ public class AnimalTest {
     
     // TODO
     public void testSetGenderNotMaleFemaleBad() {
-        fail("The test case is a prototype.");
+        setUp();
+        try{
+            instance.setGender("Hoopla");
+            fail("testSetGenderNotMaleFemaleBad failed");
+        }catch (Exception ex){
+            assertEquals( null, instance.getGender());      
+        }
     }
     
     // TODO
     public void testSetGenderMaleToFemaleBad() {
-        fail("The test case is a prototype.");
+        setUp();
+        instance.setGender("male");
+        String expected = "male";
+        try{
+            instance.setGender("female");
+            fail("testSetGenderMaleToFemaleBad failed");
+        }catch (Exception ex){
+            assertEquals( expected, instance.getGender());      
+        }
     }
 
     // TODO
