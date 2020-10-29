@@ -153,7 +153,14 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testSetSpeciesCatToDogBad() {
-        fail("The test case is a prototype.");
+        setUp();
+        instance.setSpecies("cat");
+        try{
+            instance.setSpecies("dog");
+            fail("Species was allowed to switch from cat to do");
+        }catch (Exception ex){
+            assertEquals("cat", instance.getSpecies());
+        }
     }
 
     // TODO
