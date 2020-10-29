@@ -124,7 +124,10 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testSetSpecies() {
-        fail("The test case is a prototype.");
+        setUp();
+        String expected = "dog";
+        instance.setSpecies("dog");
+        assertEquals(expected, instance.getSpecies());
     }
     
     // TODO
