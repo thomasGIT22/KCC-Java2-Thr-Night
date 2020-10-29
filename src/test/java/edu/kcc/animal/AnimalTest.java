@@ -221,7 +221,10 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testSetLegsTo0Good() {
-        fail("The test case is a prototype.");
+        setUp();
+        instance.setLegs(0);
+        int expResult = 0;
+        assertEquals(expResult, instance.getLegs());
     }
     
     // TODO
