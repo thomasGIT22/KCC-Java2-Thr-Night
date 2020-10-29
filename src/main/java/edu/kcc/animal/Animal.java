@@ -77,7 +77,7 @@ public class Animal implements Comparable<Animal> {
 
     // TODO: Need getId method
     public String getId() {
-        return "";
+        return id;
     }
 
     // TODO: Call the validator method before assigning the value
