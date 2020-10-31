@@ -224,19 +224,34 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testSetLegsTo0Good() {
-        fail("The test case is a prototype.");
+        setUp();
+        instance.setLegs(0);
+        int expResult = 0;
+        assertEquals(expResult, instance.getLegs());
     }
     
     // TODO
     @org.junit.Test
     public void testSetLegsTo5Bad() {
-        fail("The test case is a prototype.");
+        setUp();
+        try{
+            instance.setLegs(5);
+            fail("Test failed, 5 or more legs can not be allowed.");
+        }catch(Exception ex){
+            assertTrue(true);
+        }
     }
     
     // TODO
     @org.junit.Test
     public void testSetLegsToNegativeBad() {
-        fail("The test case is a prototype.");
+        setUp();
+        try{
+            instance.setLegs(-1);
+            fail("Test failed, animals can not have negative legs.");
+        }catch(Exception e){
+            assertTrue(true);
+        }
     }
 
     @org.junit.Test
