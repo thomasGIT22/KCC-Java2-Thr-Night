@@ -63,54 +63,79 @@ public class AnimalTest {
         assertEquals(expected, actual);
     }
 
-    // TODO Nathaniel
     @org.junit.Test
     public void testSetName() {
         instance.setName("Spot");
         assertEquals("Spot", instance.getName());
     }
 
-    // TODO Nathaniel
     @org.junit.Test
     public void testGetGender() {
         String expected = "Unknown";
         String actual = instance.getGender();
         assertEquals(expected, actual);
     }
-
-    // TODO Nathaniel
+  
     @org.junit.Test
     public void testSetGender() {
+        setUp();
+        String expected = "male";
         instance.setGender("male");
-        assertEquals("male", instance.getGender());
+        assertEquals(expected, instance.getGender());
     }
     
     // TODO
     public void testSetGenderNotMaleFemaleBad() {
-        fail("The test case is a prototype.");
+        setUp();
+        try{
+            instance.setGender("Hoopla");
+            fail("testSetGenderNotMaleFemaleBad failed");
+        }catch (Exception ex){
+            assertEquals( "Unknown", instance.getGender());      
+        }
     }
     
     // TODO
     public void testSetGenderMaleToFemaleBad() {
-        fail("The test case is a prototype.");
+        setUp();
+        instance.setGender("male");
+        String expected = "male";
+        try{
+            instance.setGender("female");
+            fail("testSetGenderMaleToFemaleBad failed");
+        }catch (Exception ex){
+            assertEquals( expected, instance.getGender());      
+        }
     }
 
     // TODO
     @org.junit.Test
     public void testGetSpecies() {
-        fail("The test case is a prototype.");
+        setUp();
+        String expected = "cat";
+        instance.setSpecies("cat");
+        assertEquals(expected, instance.getSpecies());
     }
 
     // TODO
     @org.junit.Test
     public void testSetSpecies() {
-        fail("The test case is a prototype.");
+        setUp();
+        String expected = "dog";
+        instance.setSpecies("dog");
+        assertEquals(expected, instance.getSpecies());
     }
     
     // TODO
     @org.junit.Test
     public void testSetSpeciesNotCatorDogBad() {
-        fail("The test case is a prototype.");
+        setUp();
+        try{
+            instance.setSpecies("Dolphin");
+            fail("Species was allowed to be something that isnt cat or dog");
+        }catch (Exception ex){
+            assertEquals("Unknown", instance.getSpecies());
+        }
     }
     
 
@@ -124,7 +149,14 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testSetSpeciesCatToDogBad() {
-        fail("The test case is a prototype.");
+        setUp();
+        instance.setSpecies("cat");
+        try{
+            instance.setSpecies("dog");
+            fail("Species was allowed to switch from cat to do");
+        }catch (Exception ex){
+            assertEquals("cat", instance.getSpecies());
+        }
     }
 
     // TODO
@@ -447,7 +479,7 @@ public class AnimalTest {
         System.out.println("idValidator");
         String id = "";
         Animal instance = new Animal();
-        instance.idValidator(id);
+        //instance.idValidator(id);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
