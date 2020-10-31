@@ -58,28 +58,31 @@ public class AnimalTest {
 
     @org.junit.Test
     public void testGetName() {
-        setUp();
         String expected = "Unknown";
         String actual = instance.getName();
         assertEquals(expected, actual);
     }
 
-    // TODO
+    // TODO Nathaniel
     @org.junit.Test
     public void testSetName() {
-        fail("The test case is a prototype.");
+        instance.setName("Spot");
+        assertEquals("Spot", instance.getName());
     }
 
-    // TODO
+    // TODO Nathaniel
     @org.junit.Test
     public void testGetGender() {
-        fail("The test case is a prototype.");
+        String expected = "Unknown";
+        String actual = instance.getGender();
+        assertEquals(expected, actual);
     }
 
-    // TODO
+    // TODO Nathaniel
     @org.junit.Test
     public void testSetGender() {
-        fail("The test case is a prototype.");
+        instance.setGender("male");
+        assertEquals("male", instance.getGender());
     }
     
     // TODO
