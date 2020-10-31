@@ -265,14 +265,19 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testSetWeightToZeroGood() {
-        fail("The test case is a prototype.");
+        BigDecimal weight = 0;
+        animalWeight instance = new animalWeight();
+        instance.setWeight(weight);
+        assertEquals(weight, instance.getWeight());
     }
     
     // TODO
     @org.junit.Test
     public void testSetWeightTo1000Good() {
-        
-        fail("The test case is a prototype.");
+        BigDecimal weight = 1000;
+        animalWeight instance = new animalWeight();
+        instance.setWeight(weight);
+        assertEquals(weight, instance.getWeight());
     }
     
     // TODO
