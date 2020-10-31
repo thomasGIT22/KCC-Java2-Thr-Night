@@ -3,10 +3,6 @@ package edu.kcc.ui;
 import java.util.Arrays;
 import java.util.Scanner;
 
-/**
- *
- * @author Nathaniel Webber
- */
 public class UIUtility {
     /**
      * The desired width of the page in characters.
