@@ -92,10 +92,9 @@ public class Animal implements Comparable<Animal> {
     public void setName(String name) {
         this.name = name;
     }
-    
+
     // TODO: Need speciesValidator method (Musab)
     // Only allow cat and dog. Only allow it to change if it's "Unknown".
-
     public String getGender() {
         return gender;
     }
@@ -114,43 +113,43 @@ public class Animal implements Comparable<Animal> {
     }
 
     // TODO: Call the validator method before assigning the value
-    public void setGender(String g){
+    public void setGender(String g) {
         genderValidator(g);
         gender = g.toLowerCase();
     }
 
     // TODO: Need genderValidator method - Only allow male and female. Only allow it to change if it's "Unknown".
     private void genderValidator(String gender) {
-        if(this.gender == null){
+        if (this.gender == null) {
             return;
         }
-        if(this.gender.compareTo("Unknown") != 0){
+        if (this.gender.compareTo("Unknown") != 0) {
             throw new IllegalArgumentException("Gender has already been set");
         }
-        if(!gender.equalsIgnoreCase("male") && !gender.equalsIgnoreCase("female")){
+        if (!gender.equalsIgnoreCase("male") && !gender.equalsIgnoreCase("female")) {
             throw new IllegalArgumentException("Gender must be male or female.");
         }
     }
-    
+
     public String getSpecies() {
         return species;
     }
-    
+
     // TODO: Call the validator method before assigning the value
-    public void setSpecies(String species){
+    public void setSpecies(String species) {
         speciesValidator(species);
         this.species = species.toLowerCase();
     }
 
     // TODO: Need speciesValidator method - Only allow cat and dog. Only allow it to change if it's "Unknown".
     private void speciesValidator(String species) {
-        if(this.species == null){
+        if (this.species == null) {
             return;
         }
-        if(this.species.compareTo("Unknown") != 0){
+        if (this.species.compareTo("Unknown") != 0) {
             throw new IllegalArgumentException("Species has already been set");
         }
-        if(!species.equalsIgnoreCase("cat") && !species.equalsIgnoreCase("dog")){
+        if (!species.equalsIgnoreCase("cat") && !species.equalsIgnoreCase("dog")) {
             throw new IllegalArgumentException("Species must be cat or dog");
         }
     }
@@ -164,13 +163,12 @@ public class Animal implements Comparable<Animal> {
         validateAge(age);
         this.age = age;
     }
-    
-    private void validateAge(int age){
-        if(age < 0 || age > 100){
+
+    private void validateAge(int age) {
+        if (age < 0 || age > 100) {
             throw new IllegalArgumentException("Age must be between 0 and 100");
         }
     }
-
 
     // TODO: Need getFixed method
     public boolean getFixed() {
@@ -238,11 +236,10 @@ public class Animal implements Comparable<Animal> {
             throw new IllegalArgumentException("Last feeding times"
                     + "no less than two days in the past");
         }
-    }    
-    
-    // TODO: Need compareTo method //Musab
-        // Compare by their species first, then by their name 
+    }
 
+    // TODO: Need compareTo method //Musab
+    // Compare by their species first, then by their name 
     @Override
     public String toString() {
         return name + " the " + gender + " " + species + " is " + age
@@ -261,7 +258,7 @@ public class Animal implements Comparable<Animal> {
     public int compareTo(Animal other) {
         int result;
         result = this.getSpecies().compareTo(other.getSpecies());
-        if(result == 0){
+        if (result == 0) {
             result = this.getName().compareTo(other.getName());
         }
         return result;
