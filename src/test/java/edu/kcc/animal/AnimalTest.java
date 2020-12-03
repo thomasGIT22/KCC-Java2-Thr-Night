@@ -297,8 +297,8 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testSetWeightToZeroGood() {
-        BigDecimal weight = 0;
-        animalWeight instance = new animalWeight();
+        BigDecimal weight = new BigDecimal(0);
+        Animal instance = new Animal();
         instance.setWeight(weight);
         assertEquals(weight, instance.getWeight());
     }
@@ -306,8 +306,8 @@ public class AnimalTest {
     // TODO
     @org.junit.Test
     public void testSetWeightTo1000Good() {
-        BigDecimal weight = 1000;
-        animalWeight instance = new animalWeight();
+        BigDecimal weight = new BigDecimal(1000);
+        Animal instance = new Animal();
         instance.setWeight(weight);
         assertEquals(weight, instance.getWeight());
     }

@@ -243,7 +243,11 @@ public class Animal implements Comparable<Animal> {
     @Override
     public String toString() {
         return name + " the " + gender + " " + species + " is " + age
-                + " and has a weight of " + weight.toString();
+                + " and has a weight of " + weight.toString() + ". " 
+                + " they were last fed on " + lastFeedingTime.toString() + ", "
+                + " they were added on " + dateAdded.toString() + ", " 
+                + " and their id is " + id + "." + " Are they fixed? "
+                + fixed + "." + " Lastly, they have " + legs + " legs.";
 
         /*
         return "Name: " + name + "\n" +
